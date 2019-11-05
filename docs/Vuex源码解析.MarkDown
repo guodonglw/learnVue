@@ -14,9 +14,12 @@ Vuex实现了一个单向数据流，在全局拥有一个State存放数据，�
 
 ## 安装
 
-使用过Vuex的朋友一定知道，Vuex的安装十分简单，只需要提供一个store，然后执行下面两句代码即完成的Vuex的引入。
+使用过Vuex的朋友一定知道，Vuex的安装十分简单，只需要提供一个store，然后执行下面三句代码即完成的Vuex的引入。
 
 ```javascript
+/*将vuex实例引入项目，以方便后续放入vue实例中*/
+import store from './vuex/store'
+
 Vue.use(Vuex);
 
 /*将store放入Vue创建时的option中*/

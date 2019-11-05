@@ -445,13 +445,13 @@ newEndIdx => newEndVnode
 
 ![img](https://i.loli.net/2017/08/29/59a4de0fa4dba.png)
 
-到这里循环已经结束了，那么剩下我们还需要处理多余或者不够的真实DOM节点。
+到这里循环已经结束了，那么剩下我们还需要处理多余或者缺少的真实DOM节点。
 
 1.当结束时oldStartIdx > oldEndIdx，这个时候老的VNode节点已经遍历完了，但是新的节点还没有。说明了新的VNode节点实际上比老的VNode节点多，也就是比真实DOM多，需要将剩下的（也就是新增的）VNode节点插入到真实DOM节点中去，此时调用addVnodes（批量调用createElm的接口将这些节点加入到真实DOM中去）。
 
 ![img](https://i.loli.net/2017/08/29/59a509f0d1788.png)
 
-2。同理，当newStartIdx > newEndIdx时，新的VNode节点已经遍历完了，但是老的节点还有剩余，说明真实DOM节点多余了，需要从文档中删除，这时候调用removeVnodes将这些多余的真实DOM删除。
+2.同理，当newStartIdx > newEndIdx时，新的VNode节点已经遍历完了，但是老的节点还有剩余，说明真实DOM节点多余了，需要从文档中删除，这时候调用removeVnodes将这些多余的真实DOM删除。
 
 ![img](https://i.loli.net/2017/08/29/59a4f389b98cb.png)
 
